@@ -21,7 +21,7 @@ export default {
   methods: {
     async login() {
       try {
-        const response = await this.$axios.post('/login', {
+        const response = await this.$axios.post('/api-token-auth/', {
           username: this.username,
           password: this.password
         });
@@ -32,7 +32,7 @@ export default {
           localStorage.setItem('access_token', accessToken);
 
           // Dodaj token do nagłówka 'Authorization' w każdym żądaniu Axios
-          this.$axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+          this.$axios.defaults.headers.common['Authorization'] = `Token ${accessToken}`;
 
           // Przejdź na inną stronę lub wykonaj inne akcje
           this.$router.push('/ProductList');
