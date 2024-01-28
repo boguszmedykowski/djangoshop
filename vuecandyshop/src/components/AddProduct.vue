@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     submitForm() {
-      this.$axios.post('/add_product', this.product)
+      this.$axios.post('/products/', this.product)
         .then(response => {
           alert('Produkt został dodany!');
           console.log(response.data);

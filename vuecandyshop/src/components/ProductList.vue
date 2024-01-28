@@ -13,7 +13,6 @@
 </template>
   
 <script>
-
 export default {
     name: 'ProductList',
     data() {
@@ -26,27 +25,27 @@ export default {
     },
     methods: {
         fetchProducts() {
-    this.$axios.get('/products/')
-        .then(response => {
-            this.products = response.data.map(product => ({ ...product, quantity: 1 }));
-        })
-        .catch(error => {
-            console.error('Błąd przy pobieraniu produktów:', error);
-            if (error.response) {
-                // Odpowiedź serwera była poza zakresem kodu statusu 2xx
-                console.log(error.response.data);
-                console.log(error.response.status);
-                console.log(error.response.headers);
-            } else if (error.request) {
-                // Żądanie zostało wysłane, ale nie otrzymano odpowiedzi
-                console.log(error.request);
-            } else {
-                // Coś innego spowodowało błąd żądania
-                console.log('Error', error.message);
-            }
-        });
-}
-
+            this.$axios.get('/products/')
+                .then(response => {
+                    // Przekształcanie odpowiedzi, aby zawierała tylko produkty z klucza 'results'
+                    this.products = response.data.results.map(product => ({ ...product, quantity: 1 }));
+                })
+                .catch(error => {
+                    console.error('Błąd przy pobieraniu produktów:', error);
+                    if (error.response) {
+                        // Odpowiedź serwera była poza zakresem kodu statusu 2xx
+                        console.log(error.response.data);
+                        console.log(error.response.status);
+                        console.log(error.response.headers);
+                    } else if (error.request) {
+                        // Żądanie zostało wysłane, ale nie otrzymano odpowiedzi
+                        console.log(error.request);
+                    } else {
+                        // Coś innego spowodowało błąd żądania
+                        console.log('Error', error.message);
+                    }
+                });
+        }
     }
 };
 </script>
