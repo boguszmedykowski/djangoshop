@@ -1,0 +1,104 @@
+
+body {
+  background-color: #f3e0dc; /* jasny, ciepły kolor tła */
+  color: #5a2a27; /* główny kolor tekstu */
+  font-family: 'Cookie', sans-serif; /* przyjemny font, jeśli dostępny */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #5a2a27;
+}
+
+.form-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style dla pól formularzy */
+.form-input {
+  border: 2px solid #5a2a27;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 90%;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-button {
+  background-color: #5a2a27;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+.form-button:hover {
+  background-color: #7a3b34;
+}
+
+/* Style dla linków */
+a {
+  color: #5a2a27;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Sackbar */
+
+.snackbar {
+
+}
+
+/* Style dla snackbar, gdy jest widoczny */
+.show-snackbar {
+  background-color: #333; /* Kolor tła snackbar */
+  color: rgb(255, 0, 0); /* Kolor tekstu */
+  text-align: center; /* Wyśrodkowanie tekstu */
+  border-radius: 2px; /* Zaokrąglone rogi */
+  padding: 16px; /* Padding wokół tekstu */
+  position: fixed; /* Pozycja stała */
+  z-index: 1; /* Upewnij się, że snackbar jest na wierzchu */
+  left: 50%; /* Centrowanie w poziomie */
+  bottom: 30px; /* Odległość od dołu ekranu */
+  transform: translateX(-50%); /* Dalsze centrowanie w poziomie */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Cień dla snackbar */
+  visibility: visible; /* Ustaw widoczność na widoczny */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s; /* Animacje fade-in i fade-out dla Webkit */
+  animation: fadein 0.5s, fadeout 0.5s 2.5s; /* Animacje fade-in i fade-out */
+}
+
+/* Animacja fade-in */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+/* Animacja fade-out */
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}

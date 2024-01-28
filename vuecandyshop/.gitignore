@@ -1,0 +1,29 @@
+# Zależności
+/node_modules
+
+# Folder produkcyjny
+/dist
+
+# Lokalne pliki konfiguracyjne
+/.env.local
+/.env.*.local
+
+# Logi błędów
+/npm-debug.log*
+/yarn-debug.log*
+/yarn-error.log*
+
+# Systemowe pliki
+.DS_Store
+Thumbs.db
+
+# Edytory
+.idea
+.vscode
+*.swp
+*.swo
+
+# Pliki konfiguracyjne IDE
+/.idea
+/.vscode
+/instance
