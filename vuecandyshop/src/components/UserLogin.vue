@@ -25,26 +25,28 @@ export default {
           username: this.username,
           password: this.password
         });
+        console.log("Odpowiedź z API:", response);
 
-        if (response.status === 200) {
-          // Zapisz token w lokalnym składowym magazynie (localStorage) lub ciasteczku (cookie)
-          const accessToken = response.data.access_token;
-          localStorage.setItem('access_token', accessToken);
-
-          // Dodaj token do nagłówka 'Authorization' w każdym żądaniu Axios
-          this.$axios.defaults.headers.common['Authorization'] = `Token ${accessToken}`;
-
-          // Przejdź na inną stronę lub wykonaj inne akcje
-          this.$router.push('/ProductList');
+        if (response.data.token) {
+          // Ustawienie nagłówka 'Authorization' dla przyszłych żądań
+          this.$axios.defaults.headers.common['Authorization'] = `Token ${response.data.token}`;
+          console.log("Nagłówek Authorization ustawiony");
         }
       } catch (error) {
-        console.error(error);
-        // Obsłuż błąd logowania
+        console.error("Błąd podczas logowania:", error);
       }
     }
   }
 }
 </script>
+
+
+
+
+
+
+
+
 
 
 
