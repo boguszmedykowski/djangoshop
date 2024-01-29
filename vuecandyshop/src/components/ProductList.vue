@@ -34,9 +34,6 @@ export default {
                     console.error('Błąd przy pobieraniu produktów:', error);
                     if (error.response) {
                         // Odpowiedź serwera była poza zakresem kodu statusu 2xx
-                        console.log(error.response.data);
-                        console.log(error.response.status);
-                        console.log(error.response.headers);
                     } else if (error.request) {
                         // Żądanie zostało wysłane, ale nie otrzymano odpowiedzi
                         console.log(error.request);

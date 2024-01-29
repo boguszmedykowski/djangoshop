@@ -33,8 +33,19 @@ export default {
           console.log(response.data);
         })
         .catch(error => {
-          alert('Wystąpił błąd przy dodawaniu produktu.');
-          console.error(error);
+          if (error.response && error.response.status) {
+            if (error.response.status === 401) {
+              alert('Musisz być zalogowany jako administrator')
+              this.$router.push('/UserLogin');
+            }
+            else if (error.response.status === 403) {
+              alert('Nie masz uprawnień do tej akcji.');
+            }
+            }
+            else {
+            console.error(error);
+            alert('Wystąpił błąd przy dodawaniu produktu.');
+          }
         });
     }
   }
