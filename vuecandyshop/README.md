@@ -16,6 +16,3 @@ npm run build
 
 npm install -g http-server
 http-server dist
-
-docker build -t vuecandyshop .
-docker run -d --name vuecandyshop -p 8080:8080 vuecandyshop
