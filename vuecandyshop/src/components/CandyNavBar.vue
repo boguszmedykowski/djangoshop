@@ -11,8 +11,8 @@
         <router-link to="/addProduct" class="navbar-item">Dodaj produkt</router-link>
         <router-link to="/ProductList" class="navbar-item">Lista produktów</router-link>
         <router-link to="/CandyCart" class="navbar-item">Koszyk</router-link>
-        <router-link to="/UserLogin" class="navbar-item">Login</router-link>
-        <router-link to="/UserRegister" class="navbar-item">Register</router-link>
+        <router-link to="/UserLogin" class="navbar-item">Zaloguj</router-link>
+        <router-link to="/UserRegister" class="navbar-item">Zarejestruj</router-link>
       </div>
     </div>
   </nav>
