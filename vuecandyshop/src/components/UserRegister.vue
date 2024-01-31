@@ -4,11 +4,10 @@
       <form @submit.prevent="register">
         <input type="text" v-model="username" placeholder="Username" />
         <input type="password" v-model="password" placeholder="Password" />
-        <button type="submit">Register</button>
+        <button type="submit">Zarejestruj</button>
       </form>
     </div>
 
-    <div v-if="showSnackbar" class="show-snackbar">{{ errorMessage }}</div>
   </template>
   
   <script>
@@ -26,7 +25,7 @@
     methods: {
       async register() {
         try {
-          const response = await this.$axios.post('/register', {
+          const response = await this.$axios.post('/users/', {
             username: this.username,
             password: this.password
           });
